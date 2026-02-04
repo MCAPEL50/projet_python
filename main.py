@@ -1,3 +1,5 @@
+from random import *
+from math import *
 print("Hello")
 
 
@@ -63,6 +65,39 @@ for c in range(5):
     )
 print("-" * 11)
 for c in range(4, -1, -1):
+    print(' ' * ((11- 1- 2* c)//2) + 'W' * (1+2 * c)+ ' ' * ((11 -1 -2 * c )//2))
+
+
+d1 = randint(1,6)
+d2 = randint(1,6)  
+if d1>d2:
+    print("le joueur 1 a gagné!")
+elif d1<d2:
+    print("le joueur 2 a gagné!")
+elif d1==d2:
+    print("même scores, partie nule")
+
+def jeu() :
+    de1 = randint(1,6)
+    de2 = randint(1,6)
+    if de1 > de2 :
+        return 1
+    elif de2 > de1 :
+        return 2
+    else :
+        return 0
+	
+
+def frequence(n) :
+    compteur = 0
+    for k in range(n) :		
+        if jeu() == 1 :		 
+            compteur = compteur + 1	
+    return compteur/n
+	
+	
+print(frequence(10**6))
+print(15/36)
     print(
         " " * ((11 - 1 - 2 * c) // 2)
         + "W" * (1 + 2 * c)
